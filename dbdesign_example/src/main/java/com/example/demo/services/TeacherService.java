@@ -21,6 +21,9 @@ public interface TeacherService {
 	//删除一个老师
 	void deleteATeacher(int id);
 	
-	//查找老师和兴趣爱好
-	void findTeacherAndInterest(int id);
+	//查找老师和论文
+	void findTeacherAndThesis(int id);
+	
+	//查找老师和课题
+	void findTeacherAndTopic(int id);
 }

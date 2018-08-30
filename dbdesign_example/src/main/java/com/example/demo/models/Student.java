@@ -1,5 +1,6 @@
 package com.example.demo.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,14 +13,17 @@ public class Student {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int stuId;
 	
+	@Column(nullable = false)
 	private String stuPassword;
 	
+	@Column(nullable = false)
 	private String stuName;
 	
 	private String stuSex;
 	
 	private String stuMajor;
 	
+	@Column(nullable = false)
 	private String stuEmail;
 	
 	private String stuAddress;

@@ -21,6 +21,9 @@ public interface StudentService {
 	//删除一个学生
 	void deleteAStudent(int id);
 	
-	//查找学生和兴趣爱好
-	void findStudentAndInterest(int id);
+	//查找学生和论文
+	void findStudentAndThesis(int id);
+	
+	//查找学生和课题
+	void findStudentAndTopic(int id);
 }

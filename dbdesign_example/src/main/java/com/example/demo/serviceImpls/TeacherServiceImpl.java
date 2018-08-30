@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.models.Teacher;
-import com.example.demo.repositories.InterestRepository;
+import com.example.demo.repositories.TopicRepository;
+import com.example.demo.repositories.ThesisRepository;
 import com.example.demo.repositories.TeacherRepository;
-import com.example.demo.services.InterestService;
+import com.example.demo.services.TopicService;
+import com.example.demo.services.ThesisService;
 import com.example.demo.services.TeacherService;
 
 @Service
@@ -17,9 +19,13 @@ public class TeacherServiceImpl implements TeacherService {
 	@Autowired
 	private TeacherRepository teacherRepository;
 	@Autowired
-	private InterestRepository interestRepository;
+	private ThesisRepository thesisRepository;
 	@Autowired
-	private InterestService interestService;
+	private TopicRepository topicRepository;
+	@Autowired
+	private ThesisService thesisService;
+	@Autowired
+	private TopicService topicService;
 	
 	@Override
 	public List<Teacher> getAllTeachers() {
@@ -72,17 +78,22 @@ public class TeacherServiceImpl implements TeacherService {
 	public void deleteATeacher(int id) {
 		// TODO Auto-generated method stub
 		teacherRepository.deleteById(id);
-//		interestService.deleteInterestsByTeacherId(id);
 	}
 
 	//////关系查询
 	@Override
-	public void findTeacherAndInterest(int id) {
+	public void findTeacherAndThesis(int id) {
 		// TODO Auto-generated method stub
-//		List<Object> items = interestRepository.findTeacherAndInterests(id);
+		List<Object> items = thesisRepository.findTeacherAndThesis(id);
 		System.out.println("pause");
 	}
 	
-	
+	//////关系查询
+	@Override
+	public void findTeacherAndTopic(int id) {
+		// TODO Auto-generated method stub
+		List<Object> items = topicRepository.findTeacherAndTopic(id);
+		System.out.println("pause");
+	}
 
 }
